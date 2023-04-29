@@ -7,8 +7,25 @@ import { LoginDetail } from './login-detail.model';
 })
 export class LoginDetailService {
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private http : HttpClient) { }
 
   formData: LoginDetail= new LoginDetail();
-  readonly baseUrl = '';
+  readonly baseUrl = 'https://localhost:44333/api/Logins';
+
+  postLogin(){
+    return this.http.post(this.baseUrl, this.formData);
+  }
+
+  getLogins(){
+    return this.http.get(this.baseUrl);
+  }
+
+  updateLogin(id:number){
+    return this.http.put(this.baseUrl+'/'+id, this.formData);
+  }
+
+  deleteLogin(id:number){
+    return this.http.delete(this.baseUrl+'/'+id);
+  }
+
 }

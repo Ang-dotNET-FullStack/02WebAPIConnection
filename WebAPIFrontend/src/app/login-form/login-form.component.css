@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-color: #96D4D4;
+  }
+
+.btn{
+    background-color: red;
+    color:white;
+    border:0;
+}  
